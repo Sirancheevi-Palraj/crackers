@@ -64,6 +64,7 @@
     name,
     phone,
     address,
+    email = "",
     now = new Date(),
     random = Math.random()
   }) => ({
@@ -71,6 +72,7 @@
     name: String(name).trim(),
     phone: normalisePhone(phone),
     address: String(address).trim(),
+    email: String(email).trim(),
     items: getCartItems(cart, products).map(({ product, qty }) => ({
       id: product.id,
       name: product.name,
@@ -79,6 +81,35 @@
     })),
     total: cartTotal(cart, products),
     createdAt: now.toISOString()
+  });
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const buildEmailTemplateParams = (order, currency = "₹") => ({
+    order_number: order.number,
+    customer_name: escapeHtml(order.name),
+    customer_phone: escapeHtml(order.phone),
+    customer_email: escapeHtml(order.email),
+    customer_address: escapeHtml(order.address),
+    order_items_html: order.items
+      .map(
+        (item) => `
+          <tr>
+            <td style="padding:10px;border-bottom:1px solid #eadfce;">${escapeHtml(item.name)}</td>
+            <td align="center" style="padding:10px;border-bottom:1px solid #eadfce;">${item.qty}</td>
+            <td align="right" style="padding:10px;border-bottom:1px solid #eadfce;">${formatMoney(item.price, currency)}</td>
+            <td align="right" style="padding:10px;border-bottom:1px solid #eadfce;">${formatMoney(item.price * item.qty, currency)}</td>
+          </tr>
+        `
+      )
+      .join(""),
+    order_total: formatMoney(order.total, currency)
   });
 
   const buildWhatsAppUrl = (businessNumber, order, currency = "₹") => {
@@ -115,7 +146,9 @@
     cartTotal,
     makeOrderNumber,
     createOrder,
-    buildWhatsAppUrl
+    buildWhatsAppUrl,
+    buildEmailTemplateParams,
+    escapeHtml
   };
 
   if (typeof module !== "undefined" && module.exports) module.exports = api;
