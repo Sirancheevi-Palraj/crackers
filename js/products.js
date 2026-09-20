@@ -1,4 +1,4 @@
-/* EDIT PRODUCTS HERE — this is the only catalogue file you need to change. */
+/* EDIT PRODUCTS HERE — this is the catalogue file you need to change. */
 const BUSINESS = {
   name: "Crackera",
   whatsapp: "919360651897",
@@ -6,12 +6,44 @@ const BUSINESS = {
 };
 
 const PRODUCTS = [
-  { id: 1, name: "Flower Pot", category: "Flower Pots", price: 120, emoji: "🪔", available: true, featured: true },
-  { id: 2, name: "Ground Chakkar", category: "Chakkars", price: 90, emoji: "🌀", available: true, featured: true },
-  { id: 3, name: "Classic Sparklers", category: "Sparklers", price: 80, emoji: "✨", available: true, featured: true },
-  { id: 4, name: "Colour Rockets", category: "Rockets", price: 250, emoji: "🚀", available: true, featured: true },
-  { id: 5, name: "Fancy Fountain", category: "Fountains", price: 320, emoji: "🎇", available: true },
-  { id: 6, name: "Red Bijili", category: "Sound & Fun", price: 110, emoji: "🧨", available: true },
-  { id: 7, name: "Mini Bomb", category: "Sound & Fun", price: 160, emoji: "💥", available: true },
-  { id: 8, name: "Family Celebration Box", category: "Combo Packs", price: 899, emoji: "🎆", available: true }
+  { id: 1, name: "Classic Sparklers 10 cm", category: "Sparklers", price: 45, emoji: "✨", available: true, featured: true },
+  { id: 2, name: "Classic Sparklers 15 cm", category: "Sparklers", price: 65, emoji: "✨", available: true, featured: true },
+  { id: 3, name: "Classic Sparklers 30 cm", category: "Sparklers", price: 120, emoji: "✨", available: true, featured: true },
+  { id: 4, name: "Electric Sparklers", category: "Sparklers", price: 95, emoji: "⚡", available: true },
+  { id: 5, name: "Colour Sparklers", category: "Sparklers", price: 110, emoji: "🌟", available: true },
+  { id: 6, name: "Flower Pot Mini", category: "Flower Pots", price: 85, emoji: "🪔", available: true, featured: true },
+  { id: 7, name: "Flower Pot Classic", category: "Flower Pots", price: 140, emoji: "🪔", available: true, featured: true },
+  { id: 8, name: "Flower Pot Peacock", category: "Flower Pots", price: 220, emoji: "🦚", available: true, featured: true },
+  { id: 9, name: "Flower Pot Giant", category: "Flower Pots", price: 380, emoji: "🌋", available: true },
+  { id: 10, name: "Colour Cone Fountain", category: "Flower Pots", price: 260, emoji: "🎇", available: true },
+  { id: 11, name: "Ground Chakkar Mini", category: "Chakkars", price: 70, emoji: "🌀", available: true },
+  { id: 12, name: "Ground Chakkar Classic", category: "Chakkars", price: 110, emoji: "🌀", available: true, featured: true },
+  { id: 13, name: "Ground Chakkar Deluxe", category: "Chakkars", price: 175, emoji: "🌀", available: true },
+  { id: 14, name: "Spinner Chakkar", category: "Chakkars", price: 145, emoji: "💫", available: true },
+  { id: 15, name: "Super Wheel", category: "Chakkars", price: 240, emoji: "🎡", available: true },
+  { id: 16, name: "Colour Rocket Pack", category: "Rockets", price: 180, emoji: "🚀", available: true, featured: true },
+  { id: 17, name: "Star Rocket Pack", category: "Rockets", price: 260, emoji: "🚀", available: true },
+  { id: 18, name: "Whistling Rocket", category: "Rockets", price: 320, emoji: "🚀", available: true, featured: true },
+  { id: 19, name: "Sky Shot Rocket", category: "Rockets", price: 450, emoji: "🎆", available: true },
+  { id: 20, name: "Festival Rocket Combo", category: "Rockets", price: 599, emoji: "🎇", available: true },
+  { id: 21, name: "Fancy Fountain", category: "Fountains", price: 320, emoji: "🎇", available: true, featured: true },
+  { id: 22, name: "Golden Fountain", category: "Fountains", price: 420, emoji: "✨", available: true },
+  { id: 23, name: "Multi Colour Fountain", category: "Fountains", price: 490, emoji: "🌈", available: true },
+  { id: 24, name: "Crackling Fountain", category: "Fountains", price: 360, emoji: "💥", available: true },
+  { id: 25, name: "Premium Fountain", category: "Fountains", price: 650, emoji: "🎆", available: true },
+  { id: 26, name: "Rainbow Wheel", category: "Ground Items", price: 190, emoji: "🌈", available: true },
+  { id: 27, name: "Magic Twister", category: "Ground Items", price: 210, emoji: "🪄", available: true },
+  { id: 28, name: "Dancing Peacock", category: "Ground Items", price: 280, emoji: "🦚", available: true },
+  { id: 29, name: "Colour Smoke Pot", category: "Ground Items", price: 160, emoji: "🌈", available: true },
+  { id: 30, name: "Sparkling Wheel", category: "Ground Items", price: 230, emoji: "⭐", available: true },
+  { id: 31, name: "Celebration Crackle Pack", category: "Sound & Fun", price: 150, emoji: "🧨", available: true },
+  { id: 32, name: "Family Fun Pack", category: "Sound & Fun", price: 320, emoji: "🎉", available: true },
+  { id: 33, name: "Diwali Joy Pack", category: "Combo Packs", price: 799, emoji: "🎁", available: true, featured: true },
+  { id: 34, name: "Family Celebration Box", category: "Combo Packs", price: 1199, emoji: "🎆", available: true, featured: true },
+  { id: 35, name: "Premium Diwali Hamper", category: "Combo Packs", price: 1799, emoji: "🎇", available: true },
+  { id: 36, name: "Grand Celebration Box", category: "Combo Packs", price: 2499, emoji: "✨", available: true },
+  { id: 37, name: "Kids Sparkle Combo", category: "Combo Packs", price: 499, emoji: "🌟", available: true },
+  { id: 38, name: "Sparklers Family Bundle", category: "Combo Packs", price: 699, emoji: "✨", available: true },
+  { id: 39, name: "Rockets & Fountains Combo", category: "Combo Packs", price: 999, emoji: "🚀", available: true },
+  { id: 40, name: "Festival Mega Combo", category: "Combo Packs", price: 2999, emoji: "🎆", available: true, featured: true }
 ];
