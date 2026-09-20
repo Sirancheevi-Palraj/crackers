@@ -5,7 +5,10 @@
 const BUSINESS = {
   name: "Crackera",
   whatsapp: "919360651897",
-  currency: "₹"
+  currency: "₹",
+  emailServiceId: "default_service",
+  emailTemplateId: "template_qlgxlws",
+  emailPublicKey: "9leMhy8A5M233o4h6"
 };
 
 const PRODUCTS = [
