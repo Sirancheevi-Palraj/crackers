@@ -2,25 +2,59 @@
 
 A lightweight one-month Diwali cracker storefront built with plain HTML, CSS and vanilla JavaScript.
 
-## Files
-- `index.html` — landing page
-- `products.html` — catalogue + search + category filter
-- `cart.html` — cart
-- `booking.html` — customer details + preview
-- `success.html` — order confirmation + WhatsApp link
-- `js/products.js` — **edit product names, prices, categories, emoji and availability here**
-- `js/app.js` — cart, checkout and WhatsApp logic
-- `css/style.css` — full responsive design
+## Customer flow
 
-## Business setup
-The WhatsApp number is configured in `js/products.js` as:
-`919360651897`
+Home → Crackers → Cart → Order Details → Success → WhatsApp
 
-## Product images
-The demo uses emoji-based product visuals so the site works immediately with no asset setup. Replace the `emoji` field and card rendering later if you want actual product images.
+## Current features
 
-## Order flow
-Products are hardcoded in JavaScript. Cart/order details are stored only in the customer's browser via localStorage. On confirmation, a WhatsApp link is generated with the order details pre-filled; the customer must press Send in WhatsApp.
+- Responsive Diwali storefront for mobile, tablet and desktop
+- Hardcoded product catalogue in `js/products.js`
+- Category filtering and product search
+- Product quantity controls without page reloads
+- Product-card quick view modal
+- Cart persistence with browser `localStorage`
+- Order preview and customer details validation
+- Generated order number
+- WhatsApp message pre-filled for `+91 93606 51897`
+- No backend, database or API required
+- No external font or runtime dependency
 
-## Run
-Open `index.html` directly, or serve the folder with any static server / GitHub Pages-compatible host.
+## Product configuration
+
+Edit only `js/products.js` to change the business details and products.
+
+Each product supports:
+- `id`
+- `name`
+- `category`
+- `price`
+- `emoji`
+- `available`
+- `featured`
+
+## Order storage
+
+This is intentionally a static one-month website. Orders are stored in the customer's browser until the WhatsApp message is sent. There is no shared order database.
+
+## Testing
+
+Node.js 22 is used in GitHub Actions.
+
+```bash
+npm run check
+npm test
+```
+
+Tests cover:
+- product catalogue structure
+- cart add/update/remove calculations
+- invalid cart cleanup
+- Indian mobile validation
+- order number and WhatsApp URL generation
+- static HTML asset checks
+- reload-loop / auto-refresh primitive checks
+
+## GitHub Pages
+
+Every push to `main` runs tests first. The site is deployed only when the test job succeeds.
