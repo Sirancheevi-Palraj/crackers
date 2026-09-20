@@ -19,12 +19,14 @@ Home → Crackers → Cart → Order Details → Success → WhatsApp
 - WhatsApp message pre-filled for `+91 93606 51897`
 - No backend, database or API required
 - No external font or runtime dependency
+- 40 product reference images wired into the catalogue
 
 ## Product configuration
 
 Edit only `js/products.js` to change the business details and products.
 
 Each product supports:
+- `image` — internet reference image URL
 - `id`
 - `name`
 - `category`
@@ -58,3 +60,7 @@ Tests cover:
 ## GitHub Pages
 
 Every push to `main` runs tests first. The site is deployed only when the test job succeeds.
+
+
+## Reference images
+Product reference images are sourced from the public JSK Crackers Sivakasi product catalogue for visual reference. Confirm commercial image-use rights or replace these URLs with your own licensed product photography before launch.
