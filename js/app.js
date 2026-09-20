@@ -128,7 +128,7 @@ function openProductModal(product) {
     });
   }
 
-  modal.querySelector("#quick-image").textContent = product.emoji;
+  modal.querySelector("#quick-image").innerHTML = `<img src="${product.image}" alt="${product.name}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="quick-fallback" hidden>${product.emoji}</span>`;
   modal.querySelector("#quick-title").textContent = product.name;
   modal.querySelector("#quick-category").textContent = product.category;
   modal.querySelector("#quick-price").textContent = money(product.price);
@@ -220,7 +220,11 @@ function initProductsPage() {
 function productCard(product) {
   const quantity = readCart()[product.id] || 0;
   return `<article class="product-card" tabindex="0" role="button" data-product-id="${product.id}" aria-label="View ${product.name}">
-    <div class="product-image"><span aria-hidden="true">${product.emoji}</span>${product.available ? "" : "<small>OUT OF STOCK</small>"}</div>
+    <div class="product-image">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <span class="image-fallback" aria-hidden="true" hidden>${product.emoji}</span>
+      ${product.available ? "" : "<small>OUT OF STOCK</small>"}
+    </div>
     <div class="product-body">
       <div class="product-meta"><div><div class="product-name">${product.name}</div><div class="product-category">${product.category}</div></div></div>
       <div class="price-row">
