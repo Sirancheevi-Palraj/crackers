@@ -27,10 +27,10 @@ test("cart add/update/remove flow is correct", () => {
   cart = core.addQuantity(cart, 1, 2, PRODUCTS);
   cart = core.addQuantity(cart, 2, 1, PRODUCTS);
   assert.equal(core.cartCount(cart, PRODUCTS), 3);
-  assert.equal(core.cartTotal(cart, PRODUCTS), 180);
+  assert.equal(core.cartTotal(cart, PRODUCTS), 155);
 
   cart = core.setQuantity(cart, 1, 3, PRODUCTS);
-  assert.equal(core.cartTotal(cart, PRODUCTS), 225);
+  assert.equal(core.cartTotal(cart, PRODUCTS), 200);
 
   cart = core.removeItem(cart, 2, PRODUCTS);
   assert.deepEqual(cart, { "1": 3 });
@@ -63,13 +63,13 @@ test("order and WhatsApp URL are generated correctly", () => {
   });
 
   assert.equal(order.number, "CRK-2609200700-10");
-  assert.equal(order.total, 180);
+  assert.equal(order.total, 155);
   assert.equal(order.items.length, 2);
 
   const url = core.buildWhatsAppUrl(BUSINESS.whatsapp, order, BUSINESS.currency);
   assert.match(url, /^https:\/\/wa\.me\/919360651897\?text=/);
   assert.match(decodeURIComponent(url), /Flower Pot × 2/);
-  assert.match(decodeURIComponent(url), /Total: ₹180/);
+  assert.match(decodeURIComponent(url), /Total: ₹155/);
 });
 
 test("all HTML pages use local assets and have no reload/meta-refresh mechanism", () => {
