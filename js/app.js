@@ -313,11 +313,25 @@ function renderBooking() {
   document.querySelector("#checkout-total").textContent = money(core.cartTotal(readCart(), PRODUCTS));
 }
 
-function initBooking() {
+async function initBooking() {
   const form = document.querySelector("#booking-form");
   if (!form) return;
 
-  form.addEventListener("submit", (event) => {
+  if (typeof emailjs === "undefined") {
+    toast("Email service failed to load. Please refresh and try again.");
+    return;
+  }
+
+  emailjs.init({
+    publicKey: BUSINESS.emailPublicKey,
+    blockHeadless: false,
+    limitRate: {
+      id: "crackera-order-email",
+      throttle: 1000
+    }
+  });
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const cart = readCart();
@@ -329,9 +343,10 @@ function initBooking() {
     const formData = new FormData(form);
     const name = String(formData.get("name") || "").trim();
     const phone = String(formData.get("phone") || "");
+    const email = String(formData.get("email") || "").trim();
     const address = String(formData.get("address") || "").trim();
 
-    if (!name || !address) {
+    if (!name || !address || !email) {
       toast("Please fill in all required details");
       return;
     }
@@ -341,23 +356,51 @@ function initBooking() {
       return;
     }
 
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast("Enter a valid email address");
+      return;
+    }
+
     const order = core.createOrder({
       cart,
       products: PRODUCTS,
       name,
       phone,
+      email,
       address
     });
 
-    try {
-      localStorage.setItem(STORAGE_ORDER, JSON.stringify(order));
-      localStorage.removeItem(STORAGE_CART);
-    } catch {}
+    const button = document.querySelector("#confirm-order-btn");
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Sending order email…";
+    }
 
-    location.href = "success.html";
+    try {
+      const templateParams = core.buildEmailTemplateParams(order, BUSINESS.currency);
+
+      await emailjs.send(
+        BUSINESS.emailServiceId,
+        BUSINESS.emailTemplateId,
+        templateParams
+      );
+
+      try {
+        localStorage.setItem(STORAGE_ORDER, JSON.stringify(order));
+        localStorage.removeItem(STORAGE_CART);
+      } catch {}
+
+      location.href = "success.html";
+    } catch (error) {
+      console.error("EmailJS order email failed:", error);
+      if (button) {
+        button.disabled = false;
+        button.textContent = "Confirm order & email us →";
+      }
+      toast("We couldn't send the email. Please try again.");
+    }
   });
 }
-
 function initSuccess() {
   const card = document.querySelector(".success-card");
   if (!card) return;
