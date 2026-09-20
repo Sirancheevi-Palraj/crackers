@@ -8,7 +8,7 @@ const { BUSINESS, PRODUCTS } = (() => {
   const vm = require("node:vm");
   const sandbox = {};
   vm.createContext(sandbox);
-  vm.runInContext(source, sandbox);
+  vm.runInContext(source + "\nthis.BUSINESS = BUSINESS; this.PRODUCTS = PRODUCTS;", sandbox);
   return { BUSINESS: sandbox.BUSINESS, PRODUCTS: sandbox.PRODUCTS };
 })();
 
