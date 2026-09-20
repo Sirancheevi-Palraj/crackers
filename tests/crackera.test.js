@@ -19,6 +19,7 @@ test("catalog is structurally valid", () => {
   assert.equal(new Set(PRODUCTS.map((p) => p.id)).size, PRODUCTS.length);
   assert.ok(PRODUCTS.every((p) => Number.isInteger(p.id) && p.id > 0));
   assert.ok(PRODUCTS.every((p) => p.name && p.category));
+  assert.ok(PRODUCTS.every((p) => /^https:\/\//.test(p.image)));
   assert.ok(PRODUCTS.every((p) => Number.isFinite(p.price) && p.price > 0));
 });
 
