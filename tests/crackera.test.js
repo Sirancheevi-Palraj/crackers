@@ -58,6 +58,7 @@ test("order and WhatsApp URL are generated correctly", () => {
     products: PRODUCTS,
     name: "Siran",
     phone: "9360651897",
+    email: "customer@example.com",
     address: "Chennai",
     now,
     random: 0
@@ -66,6 +67,14 @@ test("order and WhatsApp URL are generated correctly", () => {
   assert.equal(order.number, "CRK-2609200700-10");
   assert.equal(order.total, 250);
   assert.equal(order.items.length, 2);
+  assert.equal(order.email, "customer@example.com");
+
+  const emailParams = core.buildEmailTemplateParams(order, BUSINESS.currency);
+  assert.equal(emailParams.order_number, order.number);
+  assert.equal(emailParams.customer_email, "customer@example.com");
+  assert.match(emailParams.order_items_html, /3½ Lakshmi/);
+  assert.match(emailParams.order_items_html, /<tr>/);
+  assert.equal(emailParams.order_total, "₹250");
 
   const url = core.buildWhatsAppUrl(BUSINESS.whatsapp, order, BUSINESS.currency);
   assert.match(url, /^https:\/\/wa\.me\/919360651897\?text=/);
@@ -83,7 +92,27 @@ test("all HTML pages use local assets and have no reload/meta-refresh mechanism"
     assert.match(html, /js\/core\.js/);
     assert.match(html, /js\/app\.js/);
     assert.match(html, /css\/style\.css/);
+    if (page === "booking.html") {
+      assert.match(html, /@emailjs\/browser@4\/dist\/email\.min\.js/);
+      assert.match(html, /id="confirm-order-btn"/);
+      assert.match(html, /name="email"/);
+    }
   }
+});
+
+test("browser code contains no EmailJS private key or REST access token", () => {
+  const pages = ["index.html", "products.html", "cart.html", "booking.html", "success.html"];
+  const sources = pages
+    .map((page) => fs.readFileSync(path.join(__dirname, "..", page), "utf8"))
+    .concat(
+      fs.readFileSync(path.join(__dirname, "..", "js", "app.js"), "utf8"),
+      fs.readFileSync(path.join(__dirname, "..", "js", "products.js"), "utf8")
+    )
+    .join("\n");
+
+  assert.doesNotMatch(sources, /privateKey\s*:/i);
+  assert.doesNotMatch(sources, /accessToken\s*:/i);
+  assert.doesNotMatch(sources, /private_key/i);
 });
 
 test("application JavaScript has no reload loop primitives", () => {
