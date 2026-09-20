@@ -15,7 +15,7 @@ const { BUSINESS, PRODUCTS } = (() => {
 test("catalog is structurally valid", () => {
   assert.ok(BUSINESS);
   assert.equal(BUSINESS.whatsapp, "919360651897");
-  assert.ok(PRODUCTS.length >= 1);
+  assert.ok(PRODUCTS.length >= 30);
   assert.equal(new Set(PRODUCTS.map((p) => p.id)).size, PRODUCTS.length);
   assert.ok(PRODUCTS.every((p) => Number.isInteger(p.id) && p.id > 0));
   assert.ok(PRODUCTS.every((p) => p.name && p.category));
