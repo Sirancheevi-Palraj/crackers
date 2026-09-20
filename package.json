@@ -1,0 +1,9 @@
+{
+  "name": "crackera",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check js/core.js && node --check js/app.js && node --check js/products.js",
+    "test": "node --test tests/*.test.js"
+  }
+}
