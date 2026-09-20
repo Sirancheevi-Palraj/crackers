@@ -69,7 +69,7 @@ test("order and WhatsApp URL are generated correctly", () => {
 
   const url = core.buildWhatsAppUrl(BUSINESS.whatsapp, order, BUSINESS.currency);
   assert.match(url, /^https:\/\/wa\.me\/919360651897\?text=/);
-  assert.match(decodeURIComponent(url), /Classic Sparklers 10 cm × 2/);
+  assert.match(decodeURIComponent(url), /3½ Lakshmi × 2/);
   assert.match(decodeURIComponent(url), /Total: ₹250/);
 });
 
