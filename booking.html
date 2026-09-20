@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#100a1f">
+  <title>Order Details | Crackera</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement"><span>✨ One last step</span><span>📱 We'll prepare your WhatsApp order</span></div>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">✦</span><span>CRACKERA</span></a><nav class="main-nav"><a href="index.html">Home</a><a class="active" href="products.html">Crackers</a></nav><a class="cart-link" href="cart.html"><span>Cart</span><span id="cart-count" class="cart-count">0</span></a></header>
+
+  <main class="page narrow-page"><section class="page-hero compact"><div><div class="eyebrow">ORDER DETAILS</div><h1>Where should we send the order?</h1><p>Enter your details exactly as you'd like us to use them on WhatsApp.</p></div></section>
+    <section class="checkout-layout">
+      <form id="booking-form" class="form-card">
+        <div class="form-section"><div class="form-section-title">Contact</div><label>Full name<input required name="name" autocomplete="name" placeholder="Your name"></label><label>Mobile number<input required name="phone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></label></div>
+        <div class="form-section"><div class="form-section-title">Delivery / pickup details</div><label>Address<textarea required name="address" rows="4" placeholder="House / street / area / city"></textarea></label></div>
+        <button class="btn btn-primary btn-full" type="submit">Confirm order →</button>
+        <p class="small-note">After confirmation, WhatsApp will open with your complete order message ready to send.</p>
+      </form>
+      <aside class="summary-card"><div class="summary-label">ORDER PREVIEW</div><div id="checkout-preview"></div><div class="summary-row total"><span>Total</span><strong id="checkout-total">₹0</strong></div></aside>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/products.js"></script><script src="js/app.js"></script>
+</body>
+</html>
