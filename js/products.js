@@ -1,4 +1,7 @@
-/* EDIT PRODUCTS HERE — this is the catalogue file you need to change. */
+/* EDIT PRODUCTS HERE — this is the catalogue file you need to change.
+   Image URLs below are internet reference images from a public Sivakasi cracker catalogue.
+   Verify image usage/permission before commercial launch. Prices are demo values and should be replaced with your actual selling prices.
+*/
 const BUSINESS = {
   name: "Crackera",
   whatsapp: "919360651897",
@@ -6,44 +9,53 @@ const BUSINESS = {
 };
 
 const PRODUCTS = [
-  { id: 1, name: "Classic Sparklers 10 cm", category: "Sparklers", price: 45, emoji: "✨", available: true, featured: true },
-  { id: 2, name: "Classic Sparklers 15 cm", category: "Sparklers", price: 65, emoji: "✨", available: true, featured: true },
-  { id: 3, name: "Classic Sparklers 30 cm", category: "Sparklers", price: 120, emoji: "✨", available: true, featured: true },
-  { id: 4, name: "Electric Sparklers", category: "Sparklers", price: 95, emoji: "⚡", available: true },
-  { id: 5, name: "Colour Sparklers", category: "Sparklers", price: 110, emoji: "🌟", available: true },
-  { id: 6, name: "Flower Pot Mini", category: "Flower Pots", price: 85, emoji: "🪔", available: true, featured: true },
-  { id: 7, name: "Flower Pot Classic", category: "Flower Pots", price: 140, emoji: "🪔", available: true, featured: true },
-  { id: 8, name: "Flower Pot Peacock", category: "Flower Pots", price: 220, emoji: "🦚", available: true, featured: true },
-  { id: 9, name: "Flower Pot Giant", category: "Flower Pots", price: 380, emoji: "🌋", available: true },
-  { id: 10, name: "Colour Cone Fountain", category: "Flower Pots", price: 260, emoji: "🎇", available: true },
-  { id: 11, name: "Ground Chakkar Mini", category: "Chakkars", price: 70, emoji: "🌀", available: true },
-  { id: 12, name: "Ground Chakkar Classic", category: "Chakkars", price: 110, emoji: "🌀", available: true, featured: true },
-  { id: 13, name: "Ground Chakkar Deluxe", category: "Chakkars", price: 175, emoji: "🌀", available: true },
-  { id: 14, name: "Spinner Chakkar", category: "Chakkars", price: 145, emoji: "💫", available: true },
-  { id: 15, name: "Super Wheel", category: "Chakkars", price: 240, emoji: "🎡", available: true },
-  { id: 16, name: "Colour Rocket Pack", category: "Rockets", price: 180, emoji: "🚀", available: true, featured: true },
-  { id: 17, name: "Star Rocket Pack", category: "Rockets", price: 260, emoji: "🚀", available: true },
-  { id: 18, name: "Whistling Rocket", category: "Rockets", price: 320, emoji: "🚀", available: true, featured: true },
-  { id: 19, name: "Sky Shot Rocket", category: "Rockets", price: 450, emoji: "🎆", available: true },
-  { id: 20, name: "Festival Rocket Combo", category: "Rockets", price: 599, emoji: "🎇", available: true },
-  { id: 21, name: "Fancy Fountain", category: "Fountains", price: 320, emoji: "🎇", available: true, featured: true },
-  { id: 22, name: "Golden Fountain", category: "Fountains", price: 420, emoji: "✨", available: true },
-  { id: 23, name: "Multi Colour Fountain", category: "Fountains", price: 490, emoji: "🌈", available: true },
-  { id: 24, name: "Crackling Fountain", category: "Fountains", price: 360, emoji: "💥", available: true },
-  { id: 25, name: "Premium Fountain", category: "Fountains", price: 650, emoji: "🎆", available: true },
-  { id: 26, name: "Rainbow Wheel", category: "Ground Items", price: 190, emoji: "🌈", available: true },
-  { id: 27, name: "Magic Twister", category: "Ground Items", price: 210, emoji: "🪄", available: true },
-  { id: 28, name: "Dancing Peacock", category: "Ground Items", price: 280, emoji: "🦚", available: true },
-  { id: 29, name: "Colour Smoke Pot", category: "Ground Items", price: 160, emoji: "🌈", available: true },
-  { id: 30, name: "Sparkling Wheel", category: "Ground Items", price: 230, emoji: "⭐", available: true },
-  { id: 31, name: "Celebration Crackle Pack", category: "Sound & Fun", price: 150, emoji: "🧨", available: true },
-  { id: 32, name: "Family Fun Pack", category: "Sound & Fun", price: 320, emoji: "🎉", available: true },
-  { id: 33, name: "Diwali Joy Pack", category: "Combo Packs", price: 799, emoji: "🎁", available: true, featured: true },
-  { id: 34, name: "Family Celebration Box", category: "Combo Packs", price: 1199, emoji: "🎆", available: true, featured: true },
-  { id: 35, name: "Premium Diwali Hamper", category: "Combo Packs", price: 1799, emoji: "🎇", available: true },
-  { id: 36, name: "Grand Celebration Box", category: "Combo Packs", price: 2499, emoji: "✨", available: true },
-  { id: 37, name: "Kids Sparkle Combo", category: "Combo Packs", price: 499, emoji: "🌟", available: true },
-  { id: 38, name: "Sparklers Family Bundle", category: "Combo Packs", price: 699, emoji: "✨", available: true },
-  { id: 39, name: "Rockets & Fountains Combo", category: "Combo Packs", price: 999, emoji: "🚀", available: true },
-  { id: 40, name: "Festival Mega Combo", category: "Combo Packs", price: 2999, emoji: "🎆", available: true, featured: true }
+  { id: 1, name: "3½ Lakshmi", category: "One Sound", price: 75, image: "https://jskcrackers.com/admin/product_images/1751948471_IMG_20250707_165511.jpg", emoji: "🧨", available: true, featured: true },
+  { id: 2, name: "4 Lakshmi", category: "One Sound", price: 100, image: "https://jskcrackers.com/admin/product_images/1751954985_IMG_20250707_165530.jpg", emoji: "🧨", available: true },
+  { id: 3, name: "4 Lakshmi Deluxe", category: "One Sound", price: 175, image: "https://jskcrackers.com/admin/product_images/1751955097_IMG_20250707_165603.jpg", emoji: "🧨", available: true },
+  { id: 4, name: "Gold Lakshmi", category: "One Sound", price: 200, image: "https://jskcrackers.com/admin/product_images/1751956173_IMG_20250707_165629.jpg", emoji: "🧨", available: true, featured: true },
+
+  { id: 5, name: "Flower Pots Small", category: "Flower Pots", price: 300, image: "https://jskcrackers.com/admin/product_images/1751956427_IMG_20250707_170010.jpg", emoji: "🪔", available: true },
+  { id: 6, name: "Flower Pots Big", category: "Flower Pots", price: 360, image: "https://jskcrackers.com/admin/product_images/1751956515_IMG_20250707_170026.jpg", emoji: "🪔", available: true, featured: true },
+  { id: 7, name: "Flower Pots Special", category: "Flower Pots", price: 500, image: "https://jskcrackers.com/admin/product_images/1751971254_IMG_20250707_170033.jpg", emoji: "🪔", available: true },
+  { id: 8, name: "Flower Pots Ashoka", category: "Flower Pots", price: 625, image: "https://jskcrackers.com/admin/product_images/1751971394_IMG_20250707_170042.jpg", emoji: "🪔", available: true },
+  { id: 9, name: "Colour Koti", category: "Flower Pots", price: 1050, image: "https://jskcrackers.com/admin/product_images/1751971469_IMG_20250707_170047.jpg", emoji: "🌈", available: true, featured: true },
+  { id: 10, name: "Colour Koti Deluxe", category: "Flower Pots", price: 2400, image: "https://jskcrackers.com/admin/product_images/1751971566_IMG_20250707_170057.jpg", emoji: "🌈", available: true },
+  { id: 11, name: "Colour Koti Super Deluxe", category: "Flower Pots", price: 2500, image: "https://jskcrackers.com/admin/product_images/1751971664_IMG_20250707_170057.jpg", emoji: "🌈", available: true, featured: true },
+
+  { id: 12, name: "Chakkar Big", category: "Chakkars", price: 200, image: "https://jskcrackers.com/admin/product_images/1751971783_IMG_20250707_170116.jpg", emoji: "🌀", available: true, featured: true },
+  { id: 13, name: "Chakkar Special", category: "Chakkars", price: 400, image: "https://jskcrackers.com/admin/product_images/1751971870_IMG_20250707_170133.jpg", emoji: "🌀", available: true },
+  { id: 14, name: "Chakkar Deluxe", category: "Chakkars", price: 700, image: "https://jskcrackers.com/admin/product_images/1751971943_IMG_20250707_170140.jpg", emoji: "🌀", available: true },
+  { id: 15, name: "4×4 Wheel", category: "Chakkars", price: 750, image: "https://jskcrackers.com/admin/product_images/1751972026_IMG_20250707_170512.jpg", emoji: "🎡", available: true },
+
+  { id: 16, name: "1½ Twinkling Star", category: "Twinkling Star", price: 150, image: "https://jskcrackers.com/admin/product_images/1751972120_IMG_20250707_170210.jpg", emoji: "⭐", available: true },
+  { id: 17, name: "4-inch Twinkling Star", category: "Twinkling Star", price: 400, image: "https://jskcrackers.com/admin/product_images/1751972238_IMG_20250707_170204.jpg", emoji: "⭐", available: true, featured: true },
+
+  { id: 18, name: "Red Bijili", category: "Bijili", price: 200, image: "https://jskcrackers.com/admin/product_images/1751972419_IMG_20250707_171149.jpg", emoji: "🧨", available: true },
+  { id: 19, name: "Stripped Bijili", category: "Bijili", price: 250, image: "https://jskcrackers.com/admin/product_images/1751972489_IMG_20250707_171157.jpg", emoji: "🧨", available: true, featured: true },
+
+  { id: 20, name: "King of King", category: "Bombs", price: 500, image: "https://jskcrackers.com/admin/product_images/1751972593_IMG_20250707_165735.jpg", emoji: "💥", available: true },
+  { id: 21, name: "555 Bomb", category: "Bombs", price: 650, image: "https://jskcrackers.com/admin/product_images/1751972668_IMG_20250707_165811.jpg", emoji: "💥", available: true },
+  { id: 22, name: "Classic Bomb", category: "Bombs", price: 700, image: "https://jskcrackers.com/admin/product_images/1751972751_IMG_20250707_165755.jpg", emoji: "💥", available: true, featured: true },
+
+  { id: 23, name: "Rocket Bomb", category: "Rockets", price: 350, image: "https://jskcrackers.com/admin/product_images/1751972959_IMG_20250707_170809.jpg", emoji: "🚀", available: true, featured: true },
+  { id: 24, name: "Whizzing Rocket", category: "Rockets", price: 950, image: "https://jskcrackers.com/admin/product_images/1751973069_IMG_20250707_170809.jpg", emoji: "🚀", available: true },
+  { id: 25, name: "Double Sound Rocket", category: "Rockets", price: 700, image: "https://jskcrackers.com/admin/product_images/1751973153_IMG_20250707_170800.jpg", emoji: "🚀", available: true, featured: true },
+
+  { id: 26, name: "7 Shot", category: "Multicolour Shots", price: 650, image: "https://jskcrackers.com/admin/product_images/1751973233_IMG_20250707_171023.jpg", emoji: "🎆", available: true },
+  { id: 27, name: "Holi Multicolour Shot", category: "Multicolour Shots", price: 1250, image: "https://jskcrackers.com/admin/product_images/1751973361_IMG-20250707-WA0012.jpg", emoji: "🌈", available: true, featured: true },
+  { id: 28, name: "12 Shot Sky Shot", category: "Multicolour Shots", price: 1000, image: "https://jskcrackers.com/admin/product_images/1759418011_IMG_20251002_131928.webp", emoji: "🎆", available: true },
+
+  { id: 29, name: "30 Shot Multicolor", category: "Mega Shots", price: 2000, image: "https://jskcrackers.com/admin/product_images/1752141730_IMG_20250710_130201.jpg", emoji: "🎆", available: true, featured: true },
+  { id: 30, name: "120 Shot Multicolor", category: "Mega Shots", price: 8000, image: "https://jskcrackers.com/admin/product_images/1752141944_IMG_20250710_130249.jpg", emoji: "🎆", available: true },
+  { id: 31, name: "240 Shot Multicolor", category: "Mega Shots", price: 16000, image: "https://jskcrackers.com/admin/product_images/1752142027_IMG_20250710_130223.jpg", emoji: "🎆", available: true },
+  { id: 32, name: "60 Shot Multicolor", category: "Mega Shots", price: 4000, image: "https://jskcrackers.com/admin/product_images/1760240189_IMG_20250710_130223.webp", emoji: "🎆", available: true, featured: true },
+
+  { id: 33, name: "1-inch Sky Penta Shot", category: "Sky Shots", price: 1000, image: "https://jskcrackers.com/admin/product_images/1752142163_IMG_20250707_171038.jpg", emoji: "🎇", available: true },
+  { id: 34, name: "1-inch Chotta Fancy", category: "Sky Shots", price: 300, image: "https://jskcrackers.com/admin/product_images/1754981400_IMG_20250710_130223.webp", emoji: "🎇", available: true },
+  { id: 35, name: "2-inch Fancy", category: "Sky Shots", price: 500, image: "https://jskcrackers.com/admin/product_images/1754981678_IMG_20250707_170256.webp", emoji: "🎇", available: true },
+  { id: 36, name: "2-inch Fancy (3 pcs)", category: "Sky Shots", price: 1500, image: "https://jskcrackers.com/admin/product_images/1754981830_IMG_20250707_170239.webp", emoji: "🎇", available: true },
+  { id: 37, name: "2½-inch Fancy", category: "Sky Shots", price: 800, image: "https://jskcrackers.com/admin/product_images/1754981971_IMG_20250707_170256.webp", emoji: "🎇", available: true },
+  { id: 38, name: "2½-inch Fancy (2 pcs)", category: "Sky Shots", price: 1600, image: "https://jskcrackers.com/admin/product_images/1754982130_IMG_20250707_170312.webp", emoji: "🎇", available: true },
+  { id: 39, name: "3½-inch Fancy", category: "Sky Shots", price: 1500, image: "https://jskcrackers.com/admin/product_images/1754982245_IMG_20250723_163506.webp", emoji: "🎇", available: true },
+  { id: 40, name: "3½-inch Fancy (2 pcs)", category: "Sky Shots", price: 3000, image: "https://jskcrackers.com/admin/product_images/1754982365_IMG_20250723_163526.webp", emoji: "🎇", available: true, featured: true }
 ];
